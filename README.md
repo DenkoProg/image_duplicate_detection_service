@@ -67,12 +67,6 @@ To run the test suite inside the Docker container:
 docker-compose run app pytest
 ```
 
-## Project Structure
-- **app/**: Main application code.
-- **tests/**: Test suite for the application.
-- **Dockerfile**: Container setup.
-- **docker-compose.yml**: Automated container orchestration.
-
 ## Additional Information
 - **Image Processing**: Images are converted to vector representations using pre-trained models from PyTorch.
 - **Vector Database**: Pinecone DB stores and retrieves vectors efficiently for duplicate detection.
