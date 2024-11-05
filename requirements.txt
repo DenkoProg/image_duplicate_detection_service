@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+pillow
+torch
+torchvision
+pytorch-lightning
+pinecone
+pydantic
+requests
+python-multipart
+pytest
+httpx
+uuid
