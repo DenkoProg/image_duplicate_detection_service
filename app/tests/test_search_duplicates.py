@@ -1,4 +1,3 @@
-from unittest.mock import patch
 from fastapi.testclient import TestClient
 from app.main import app
 from .test_helpers import generate_test_image, upload_images_and_get_request_id
@@ -6,12 +5,7 @@ from .test_helpers import generate_test_image, upload_images_and_get_request_id
 client = TestClient(app)
 
 
-@patch("app.services.image_service.PineconeService.query_duplicates")
-def test_search_duplicates_with_mocked_pinecone(mock_query_duplicates, client):
-    mock_query_duplicates.return_value = [
-        {"id": "mocked_id_1", "score": 0.9, "metadata": {"label": "duplicate"}}
-    ]
-
+def test_search_duplicates(client):
     image = generate_test_image(color="red")
     request_id = upload_images_and_get_request_id(client, [image])
 
@@ -33,10 +27,7 @@ def test_search_duplicates_invalid_request_id(client):
     assert data["message"] == "No duplicates found."
 
 
-@patch("app.services.image_service.PineconeService.query_duplicates")
-def test_search_duplicates_no_duplicates(mock_query_duplicates, client):
-    mock_query_duplicates.return_value = []
-
+def test_search_duplicates_no_duplicates(client):
     image = generate_test_image(color="green")
     request_id = upload_images_and_get_request_id(client, [image])
 
