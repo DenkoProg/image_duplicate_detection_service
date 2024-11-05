@@ -6,6 +6,7 @@ torchvision
 pytorch-lightning
 pinecone
 pydantic
+pydantic-settings
 requests
 python-multipart
 pytest
