@@ -2,6 +2,10 @@
 
 This project implements a service for detecting duplicate images by converting images into vector representations and storing them in a vector database for duplicate search.
 
+## Overview
+
+https://github.com/user-attachments/assets/10bda99b-2863-434c-88d4-d8c48d4e9318
+
 ## Features
 
 - **Image Upload API**: Uploads images in various formats and converts them into vector representations.
